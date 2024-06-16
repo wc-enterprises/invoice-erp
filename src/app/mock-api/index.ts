@@ -1,8 +1,5 @@
 import { ContactsMockApi } from 'app/mock-api/apps/contacts/api';
 import { ECommerceInventoryMockApi } from 'app/mock-api/apps/ecommerce/inventory/api';
-import { NotesMockApi } from 'app/mock-api/apps/notes/api';
-import { ScrumboardMockApi } from 'app/mock-api/apps/scrumboard/api';
-import { TasksMockApi } from 'app/mock-api/apps/tasks/api';
 import { AuthMockApi } from 'app/mock-api/common/auth/api';
 import { MessagesMockApi } from 'app/mock-api/common/messages/api';
 import { NavigationMockApi } from 'app/mock-api/common/navigation/api';
@@ -26,12 +23,9 @@ export const mockApiServices = [
     IconsMockApi,
     MessagesMockApi,
     NavigationMockApi,
-    NotesMockApi,
     NotificationsMockApi,
     ProjectMockApi,
     SearchMockApi,
-    ScrumboardMockApi,
     ShortcutsMockApi,
-    TasksMockApi,
     UserMockApi,
 ];

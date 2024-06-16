@@ -163,23 +163,6 @@ export const appRoutes: Route[] = [
                                 'app/modules/admin/apps/ecommerce/ecommerce.routes'
                             ),
                     },
-                    {
-                        path: 'notes',
-                        loadChildren: () =>
-                            import('app/modules/admin/apps/notes/notes.routes'),
-                    },
-                    {
-                        path: 'scrumboard',
-                        loadChildren: () =>
-                            import(
-                                'app/modules/admin/apps/scrumboard/scrumboard.routes'
-                            ),
-                    },
-                    {
-                        path: 'tasks',
-                        loadChildren: () =>
-                            import('app/modules/admin/apps/tasks/tasks.routes'),
-                    },
                 ],
             },
 

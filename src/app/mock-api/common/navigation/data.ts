@@ -60,27 +60,6 @@ export const defaultNavigation: FuseNavigationItem[] = [
                     },
                 ],
             },
-            {
-                id: 'apps.notes',
-                title: 'Notes',
-                type: 'basic',
-                icon: 'heroicons_outline:pencil-square',
-                link: '/apps/notes',
-            },
-            {
-                id: 'apps.scrumboard',
-                title: 'Scrumboard',
-                type: 'basic',
-                icon: 'heroicons_outline:view-columns',
-                link: '/apps/scrumboard',
-            },
-            {
-                id: 'apps.tasks',
-                title: 'Tasks',
-                type: 'basic',
-                icon: 'heroicons_outline:check-circle',
-                link: '/apps/tasks',
-            },
         ],
     },
     {
