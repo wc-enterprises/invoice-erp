@@ -68,13 +68,6 @@ export const defaultNavigation: FuseNavigationItem[] = [
                 ],
             },
             {
-                id: 'apps.file-manager',
-                title: 'File Manager',
-                type: 'basic',
-                icon: 'heroicons_outline:cloud',
-                link: '/apps/file-manager',
-            },
-            {
                 id: 'apps.help-center',
                 title: 'Help Center',
                 type: 'collapsable',
