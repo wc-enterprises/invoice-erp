@@ -150,13 +150,6 @@ export const appRoutes: Route[] = [
                 path: 'apps',
                 children: [
                     {
-                        path: 'academy',
-                        loadChildren: () =>
-                            import(
-                                'app/modules/admin/apps/academy/academy.routes'
-                            ),
-                    },
-                    {
                         path: 'chat',
                         loadChildren: () =>
                             import('app/modules/admin/apps/chat/chat.routes'),

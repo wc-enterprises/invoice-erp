@@ -40,13 +40,6 @@ export const defaultNavigation: FuseNavigationItem[] = [
         icon: 'heroicons_outline:home',
         children: [
             {
-                id: 'apps.academy',
-                title: 'Academy',
-                type: 'basic',
-                icon: 'heroicons_outline:academic-cap',
-                link: '/apps/academy',
-            },
-            {
                 id: 'apps.chat',
                 title: 'Chat',
                 type: 'basic',
