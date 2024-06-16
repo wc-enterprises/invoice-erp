@@ -68,40 +68,6 @@ export const defaultNavigation: FuseNavigationItem[] = [
                 ],
             },
             {
-                id: 'apps.help-center',
-                title: 'Help Center',
-                type: 'collapsable',
-                icon: 'heroicons_outline:information-circle',
-                link: '/apps/help-center',
-                children: [
-                    {
-                        id: 'apps.help-center.home',
-                        title: 'Home',
-                        type: 'basic',
-                        link: '/apps/help-center',
-                        exactMatch: true,
-                    },
-                    {
-                        id: 'apps.help-center.faqs',
-                        title: 'FAQs',
-                        type: 'basic',
-                        link: '/apps/help-center/faqs',
-                    },
-                    {
-                        id: 'apps.help-center.guides',
-                        title: 'Guides',
-                        type: 'basic',
-                        link: '/apps/help-center/guides',
-                    },
-                    {
-                        id: 'apps.help-center.support',
-                        title: 'Support',
-                        type: 'basic',
-                        link: '/apps/help-center/support',
-                    },
-                ],
-            },
-            {
                 id: 'apps.mailbox',
                 title: 'Mailbox',
                 type: 'basic',

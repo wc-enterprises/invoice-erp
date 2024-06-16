@@ -169,13 +169,6 @@ export const appRoutes: Route[] = [
                             ),
                     },
                     {
-                        path: 'help-center',
-                        loadChildren: () =>
-                            import(
-                                'app/modules/admin/apps/help-center/help-center.routes'
-                            ),
-                    },
-                    {
                         path: 'mailbox',
                         loadChildren: () =>
                             import(
