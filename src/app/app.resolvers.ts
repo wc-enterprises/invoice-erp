@@ -19,7 +19,6 @@ export const initialDataResolver = () =>
         navigationService.get(),
         messagesService.getAll(),
         notificationsService.getAll(),
-        quickChatService.getChats(),
         shortcutsService.getAll(),
     ]);
 };
