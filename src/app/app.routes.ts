@@ -169,13 +169,6 @@ export const appRoutes: Route[] = [
                             ),
                     },
                     {
-                        path: 'file-manager',
-                        loadChildren: () =>
-                            import(
-                                'app/modules/admin/apps/file-manager/file-manager.routes'
-                            ),
-                    },
-                    {
                         path: 'help-center',
                         loadChildren: () =>
                             import(
