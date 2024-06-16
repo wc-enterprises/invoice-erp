@@ -1,7 +1,6 @@
 import { ChatMockApi } from 'app/mock-api/apps/chat/api';
 import { ContactsMockApi } from 'app/mock-api/apps/contacts/api';
 import { ECommerceInventoryMockApi } from 'app/mock-api/apps/ecommerce/inventory/api';
-import { MailboxMockApi } from 'app/mock-api/apps/mailbox/api';
 import { NotesMockApi } from 'app/mock-api/apps/notes/api';
 import { ScrumboardMockApi } from 'app/mock-api/apps/scrumboard/api';
 import { TasksMockApi } from 'app/mock-api/apps/tasks/api';
@@ -27,7 +26,6 @@ export const mockApiServices = [
     ECommerceInventoryMockApi,
     FinanceMockApi,
     IconsMockApi,
-    MailboxMockApi,
     MessagesMockApi,
     NavigationMockApi,
     NotesMockApi,
