@@ -170,30 +170,12 @@ export const appRoutes: Route[] = [
             {
                 path: 'pages',
                 children: [
-                    // Activities
-                    {
-                        path: 'activities',
-                        loadChildren: () =>
-                            import(
-                                'app/modules/admin/pages/activities/activities.routes'
-                            ),
-                    },
-
                     // Authentication
                     {
                         path: 'authentication',
                         loadChildren: () =>
                             import(
                                 'app/modules/admin/pages/authentication/authentication.routes'
-                            ),
-                    },
-
-                    // Coming Soon
-                    {
-                        path: 'coming-soon',
-                        loadChildren: () =>
-                            import(
-                                'app/modules/admin/pages/coming-soon/coming-soon.routes'
                             ),
                     },
 
@@ -244,50 +226,6 @@ export const appRoutes: Route[] = [
                         ],
                     },
 
-                    // Maintenance
-                    {
-                        path: 'maintenance',
-                        loadChildren: () =>
-                            import(
-                                'app/modules/admin/pages/maintenance/maintenance.routes'
-                            ),
-                    },
-
-                    // Pricing
-                    {
-                        path: 'pricing',
-                        children: [
-                            {
-                                path: 'modern',
-                                loadChildren: () =>
-                                    import(
-                                        'app/modules/admin/pages/pricing/modern/modern.routes'
-                                    ),
-                            },
-                            {
-                                path: 'simple',
-                                loadChildren: () =>
-                                    import(
-                                        'app/modules/admin/pages/pricing/simple/simple.routes'
-                                    ),
-                            },
-                            {
-                                path: 'single',
-                                loadChildren: () =>
-                                    import(
-                                        'app/modules/admin/pages/pricing/single/single.routes'
-                                    ),
-                            },
-                            {
-                                path: 'table',
-                                loadChildren: () =>
-                                    import(
-                                        'app/modules/admin/pages/pricing/table/table.routes'
-                                    ),
-                            },
-                        ],
-                    },
-
                     // Profile
                     {
                         path: 'profile',
@@ -312,42 +250,6 @@ export const appRoutes: Route[] = [
             {
                 path: 'ui',
                 children: [
-                    // Material Components
-                    {
-                        path: 'material-components',
-                        loadChildren: () =>
-                            import(
-                                'app/modules/admin/ui/material-components/material-components.routes'
-                            ),
-                    },
-
-                    // Fuse Components
-                    {
-                        path: 'fuse-components',
-                        loadChildren: () =>
-                            import(
-                                'app/modules/admin/ui/fuse-components/fuse-components.routes'
-                            ),
-                    },
-
-                    // Other Components
-                    {
-                        path: 'other-components',
-                        loadChildren: () =>
-                            import(
-                                'app/modules/admin/ui/other-components/other-components.routes'
-                            ),
-                    },
-
-                    // TailwindCSS
-                    {
-                        path: 'tailwindcss',
-                        loadChildren: () =>
-                            import(
-                                'app/modules/admin/ui/tailwindcss/tailwindcss.routes'
-                            ),
-                    },
-
                     // Advanced Search
                     {
                         path: 'advanced-search',
@@ -355,22 +257,6 @@ export const appRoutes: Route[] = [
                             import(
                                 'app/modules/admin/ui/advanced-search/advanced-search.routes'
                             ),
-                    },
-
-                    // Animations
-                    {
-                        path: 'animations',
-                        loadChildren: () =>
-                            import(
-                                'app/modules/admin/ui/animations/animations.routes'
-                            ),
-                    },
-
-                    // Cards
-                    {
-                        path: 'cards',
-                        loadChildren: () =>
-                            import('app/modules/admin/ui/cards/cards.routes'),
                     },
 
                     // Colors
@@ -388,74 +274,8 @@ export const appRoutes: Route[] = [
                                 'app/modules/admin/ui/confirmation-dialog/confirmation-dialog.routes'
                             ),
                     },
-
-                    // Datatable
-                    {
-                        path: 'datatable',
-                        loadChildren: () =>
-                            import(
-                                'app/modules/admin/ui/datatable/datatable.routes'
-                            ),
-                    },
-
-                    // Forms
-                    {
-                        path: 'forms',
-                        loadChildren: () =>
-                            import('app/modules/admin/ui/forms/forms.routes'),
-                    },
-
-                    // Icons
-                    {
-                        path: 'icons',
-                        loadChildren: () =>
-                            import('app/modules/admin/ui/icons/icons.routes'),
-                    },
-
-                    // Page Layouts
-                    {
-                        path: 'page-layouts',
-                        loadChildren: () =>
-                            import(
-                                'app/modules/admin/ui/page-layouts/page-layouts.routes'
-                            ),
-                    },
-
-                    // Typography
-                    {
-                        path: 'typography',
-                        loadChildren: () =>
-                            import(
-                                'app/modules/admin/ui/typography/typography.routes'
-                            ),
-                    },
                 ],
             },
-
-            // Documentation
-            {
-                path: 'docs',
-                children: [
-                    // Changelog
-                    {
-                        path: 'changelog',
-                        loadChildren: () =>
-                            import(
-                                'app/modules/admin/docs/changelog/changelog.routes'
-                            ),
-                    },
-
-                    // Guides
-                    {
-                        path: 'guides',
-                        loadChildren: () =>
-                            import(
-                                'app/modules/admin/docs/guides/guides.routes'
-                            ),
-                    },
-                ],
-            },
-
             // 404 & Catch all
             {
                 path: '404-not-found',
