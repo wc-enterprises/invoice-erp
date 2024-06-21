@@ -3,9 +3,9 @@ import { FuseNavigationItem } from '@fuse/components/navigation';
 
 export const defaultNavigation: FuseNavigationItem[] = [
     {
-        id: 'dashboards',
-        title: 'Dashboards',
-        subtitle: 'Unique dashboard designs',
+        id: 'analytics',
+        title: 'Analytics',
+        subtitle: '',
         type: 'group',
         icon: 'heroicons_outline:home',
         children: [
@@ -33,9 +33,9 @@ export const defaultNavigation: FuseNavigationItem[] = [
         ],
     },
     {
-        id: 'apps',
-        title: 'Applications',
-        subtitle: 'Custom made application designs',
+        id: 'customer-data',
+        title: 'Customer data',
+        subtitle: '',
         type: 'group',
         icon: 'heroicons_outline:home',
         children: [
@@ -46,29 +46,22 @@ export const defaultNavigation: FuseNavigationItem[] = [
                 icon: 'heroicons_outline:user-group',
                 link: '/apps/contacts',
             },
-            {
-                id: 'apps.ecommerce',
-                title: 'ECommerce',
-                type: 'collapsable',
-                icon: 'heroicons_outline:shopping-cart',
-                children: [
-                    {
-                        id: 'apps.ecommerce.inventory',
-                        title: 'Inventory',
-                        type: 'basic',
-                        link: '/apps/ecommerce/inventory',
-                    },
-                ],
-            },
         ],
     },
     {
-        id: 'pages',
-        title: 'Pages',
-        subtitle: 'Custom made page designs',
+        id: 'inventory-and-invoice',
+        title: 'Inventory and Invoice',
+        subtitle: '',
         type: 'group',
         icon: 'heroicons_outline:document',
         children: [
+            {
+                id: 'apps.spares-and-services',
+                title: 'Spares & Services',
+                type: 'basic',
+                icon: 'heroicons_outline:wrench',
+                link: '/apps/ecommerce/inventory',
+            },
             {
                 id: 'pages.authentication',
                 title: 'Authentication',
@@ -490,9 +483,9 @@ export const defaultNavigation: FuseNavigationItem[] = [
         ],
     },
     {
-        id: 'user-interface',
-        title: 'User Interface',
-        subtitle: 'Building blocks of the UI & UX',
+        id: 'system-settings',
+        title: 'System Settings',
+        subtitle: '',
         type: 'group',
         icon: 'heroicons_outline:rectangle-stack',
         children: [
