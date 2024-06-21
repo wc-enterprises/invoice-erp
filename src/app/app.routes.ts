@@ -223,6 +223,13 @@ export const appRoutes: Route[] = [
                                     },
                                 ],
                             },
+                            {
+                                    path: 'modern',
+                                    loadChildren: () =>
+                                        import(
+                                            'app/modules/admin/pages/invoice/modern/modern.routes'
+                                        ),   
+                            }
                         ],
                     },
 
