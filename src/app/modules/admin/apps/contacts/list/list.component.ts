@@ -10,7 +10,7 @@ import { ActivatedRoute, Router, RouterLink, RouterOutlet } from '@angular/route
 import { FuseMediaWatcherService } from '@fuse/services/media-watcher';
 import { ContactsService } from 'app/modules/admin/apps/contacts/contacts.service';
 import { Contact, Country } from 'app/modules/admin/apps/contacts/contacts.types';
-import { filter, fromEvent, Observable, Subject, switchMap, takeUntil } from 'rxjs';
+import { filter, fromEvent, Observable, Subject, switchMap, takeUntil, tap } from 'rxjs';
 
 @Component({
     selector       : 'contacts-list',
@@ -63,6 +63,8 @@ export class ContactsListComponent implements OnInit, OnDestroy
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe((contacts: Contact[]) =>
             {
+                if(!contacts) return;
+                console.log("ContactListComponent: GetContact: ContactCount:", contacts)
                 // Update the counts
                 this.contactsCount = contacts.length;
 
@@ -98,13 +100,11 @@ export class ContactsListComponent implements OnInit, OnDestroy
         this.searchInputControl.valueChanges
             .pipe(
                 takeUntil(this._unsubscribeAll),
-                switchMap(query =>
-
-                    // Search
-                    this._contactsService.searchContacts(query),
-                ),
             )
-            .subscribe();
+            .subscribe((query)=>{
+                console.log("search form input change", query);
+                this._contactsService.searchContacts(query);
+            });
 
         // Subscribe to MatDrawer opened change
         this.matDrawer.openedChange.subscribe((opened) =>
@@ -139,18 +139,18 @@ export class ContactsListComponent implements OnInit, OnDestroy
             });
 
         // Listen for shortcuts
-        fromEvent(this._document, 'keydown')
-            .pipe(
-                takeUntil(this._unsubscribeAll),
-                filter<KeyboardEvent>(event =>
-                    (event.ctrlKey === true || event.metaKey) // Ctrl or Cmd
-                    && (event.key === '/'), // '/'
-                ),
-            )
-            .subscribe(() =>
-            {
-                this.createContact();
-            });
+        // fromEvent(this._document, 'keydown')
+        //     .pipe(
+        //         takeUntil(this._unsubscribeAll),
+        //         filter<KeyboardEvent>(event =>
+        //             (event.ctrlKey === true || event.metaKey) // Ctrl or Cmd
+        //             && (event.key === '/'), // '/'
+        //         ),
+        //     )
+        //     .subscribe(() =>
+        //     {
+        //         this.createContact();
+        //     });
     }
 
     /**
@@ -185,7 +185,7 @@ export class ContactsListComponent implements OnInit, OnDestroy
     createContact(): void
     {
         // Create the contact
-        this._contactsService.createContact().subscribe((newContact) =>
+        this._contactsService.createNoopContact().subscribe((newContact) =>
         {
             // Go to the new contact
             this._router.navigate(['./', newContact.id], {relativeTo: this._activatedRoute});

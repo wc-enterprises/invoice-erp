@@ -1,56 +1,96 @@
 <div
     class="absolute inset-0 min-w-0 text-center overflow-auto print:overflow-visible"
-    cdkScrollable>
-
+    cdkScrollable
+>
     <!-- Main -->
     <div class="inline-block p-6 sm:p-10 text-left print:p-0">
-
         <!-- Invoice -->
-        <div class="w-240 min-w-240 p-16 rounded-2xl shadow bg-card print:w-auto print:p-0 print:rounded-none print:shadow-none print:bg-transparent">
-
+        <div
+            class="w-240 min-w-240 p-16 rounded-2xl shadow bg-card print:w-auto print:p-0 print:rounded-none print:shadow-none print:bg-transparent"
+        >
             <div class="flex items-start">
                 <div class="grid grid-rows-2 place-items-start gap-y-12">
                     <div class="grid auto-cols-max grid-flow-col gap-x-8">
-                        <div class="place-self-center w-24">
+                        <div class="place-self-top w-30 space-y-6">
                             <img
-                                class="w-24"
-                                src="assets/images/logo/logo.svg">
+                                class="w-30"
+                                src="assets/images/logo/car.svg"
+                            />
+                            <span class="w-24 text-[17px] text-center font-semibold place-self-center">GRACE AUTO SERVICE</span>
                         </div>
-                        <div class="pl-10 border-l text-md">
-                            <div class="font-medium">Fuse Inc.</div>
-                            <div>2810 Country Club Road</div>
-                            <div>Cranford, NJ 07016</div>
+                        <div class="text-[12px] text-[#787878] bg-[#FAF0CA] p-3 rounded-md">
+                            <div>Grace cars 44 wilde cross,</div>
+                            <div>Burnham-On-Sea, TA8 1RL</div>
                             <div>+66 123 455 87</div>
-                            <div>hello&#64;fuseinc.com</div>
-                            <div>www.fuseinc.com</div>
                         </div>
                     </div>
-                    <div class="grid auto-cols-max grid-flow-col gap-x-8">
-                        <div class="place-self-center w-24 text-center text-2xl text-secondary">
+                    <div class="grid auto-cols-max grid-flow-row gap-y-2">
+                        <div
+                            class="place-self-left w-24 text-left text-[16px] text-[#787878]"
+                        >
                             Bill To
                         </div>
-                        <div class="pl-10 border-l text-md">
-                            <div class="font-medium">Brian Hughes</div>
-                            <div>9301 Wood Street</div>
-                            <div>Philadelphia, PA 19111</div>
-                            <div>+55 552 455 87</div>
-                            <div>hughes.brian&#64;company.com</div>
+                        <div class="w-60 text-md">
+                            <div class="text-[#64748B] font-[16px]">JOHN MATHEW,  KUNNATH KIZAKKATHIL,  11 BUDE ROAD FILTON,  BRISTOL BS34 7HN</div>
+                            <div class="text-[#64748B] font-[16px]">+55 552 455 87</div>
+                        </div>
+                    </div>
+                    <div class="grid auto-cols-max grid-flow-row gap-y-2">
+                        <div
+                            class="place-self-left w-24 text-left text-[16px] text-[#787878]"
+                        >
+                        Car Details:                         </div>
+                        <div class="grid grid-cols-12 gap-x-3 mt-0">
+                            <!-- Columns -->
+                            <div class="col-span-2 font-medium text-md text-secondary">REG NO</div>
+                            <!-- <div class="font-medium text-md text-right text-secondary">RATE</div>
+                            <div class="font-medium text-md text-right text-secondary">QTY</div> -->
+                            <div class="col-span-8 font-medium text-md text-left text-[#5D6066] text-secondary">DF19 UCZ</div>
+
+                        </div>
+                        <div class="grid grid-cols-12 gap-x-3 mt-0">
+                            <!-- Columns -->
+                            <div class="col-span-2 font-medium text-md text-secondary">MAKE</div>
+                            <div class="col-span-8 font-medium text-md text-left text-[#5D6066] text-secondary">HONDA</div>
+
+                        </div>
+                        <div class="grid grid-cols-12 gap-x-3 mt-0">
+                            <!-- Columns -->
+                            <div class="col-span-2 font-medium text-md text-secondary">MODEL</div>
+                            <div class="col-span-8 font-medium text-md text-left text-[#5D6066] text-secondary">CIVIC</div>
+
                         </div>
                     </div>
                 </div>
                 <div class="grid grid-cols-2 gap-x-4 gap-y-1 ml-auto">
-                    <div class="justify-self-end text-4xl tracking-tight text-secondary">INVOICE</div>
+                    <div
+                        class="justify-self-end text-4xl tracking-tight text-secondary"
+                    >
+                        INVOICE
+                    </div>
                     <div class="text-4xl">#9-0004</div>
-                    <div class="justify-self-end font-medium tracking-tight text-secondary">INVOICE DATE</div>
+                    <div
+                        class="justify-self-end font-medium tracking-tight text-secondary"
+                    >
+                        INVOICE DATE
+                    </div>
                     <div class="font-medium">Jul 19, 2022</div>
-                    <div class="justify-self-end font-medium tracking-tight text-secondary">DUE DATE</div>
+                    <div
+                        class="justify-self-end font-medium tracking-tight text-secondary"
+                    >
+                        DUE DATE
+                    </div>
                     <div class="font-medium">Aug 19, 2022</div>
-                    <div class="justify-self-end font-medium tracking-tight text-secondary">TOTAL DUE</div>
+                    <div
+                        class="justify-self-end font-medium tracking-tight text-secondary"
+                    >
+                        TOTAL DUE
+                    </div>
                     <div class="font-medium">$49,000.00</div>
                 </div>
             </div>
 
-            <div class="grid grid-cols-12 gap-x-1 mt-16">
+            <div class="grid grid-cols-12 gap-x-1 mt-12">
                 <!-- Columns -->
                 <div class="col-span-8 font-medium text-md text-secondary">SERVICE</div>
                 <div class="font-medium text-md text-right text-secondary">RATE</div>
@@ -61,12 +101,7 @@
                 <div class="col-span-12 my-4 border-b"></div>
 
                 <!-- Item -->
-                <div class="col-span-8">
-                    <div class="text-lg font-medium">Prototype & Design</div>
-                    <div class="mt-2 text-md text-secondary">
-                        Prototyping of the application's general workflow and the detailed design of its 72 screens as a working prototype.
-                    </div>
-                </div>
+                <div class="col-span-8 text-lg font-medium">Prototype & Design</div>
                 <div class="self-center text-right">$75.00</div>
                 <div class="self-center text-right">240</div>
                 <div class="col-span-2 self-center text-right">$18,000.00</div>
@@ -75,12 +110,7 @@
                 <div class="col-span-12 my-4 border-b"></div>
 
                 <!-- Item -->
-                <div class="col-span-8">
-                    <div class="text-lg font-medium">Development</div>
-                    <div class="mt-2 text-md text-secondary">
-                        The web and mobile development of the application using appropriate tools and registering it to major application stores.
-                    </div>
-                </div>
+                <div class="col-span-8 text-lg font-medium">Development</div>
                 <div class="self-center text-right">$60.50</div>
                 <div class="self-center text-right">350</div>
                 <div class="col-span-2 self-center text-right">$21,175.00</div>
@@ -89,12 +119,7 @@
                 <div class="col-span-12 my-4 border-b"></div>
 
                 <!-- Item -->
-                <div class="col-span-8">
-                    <div class="text-lg font-medium">Testing</div>
-                    <div class="mt-2 text-md text-secondary">
-                        Extensive testing of the application using various mobile and desktop devices with different operating systems.
-                    </div>
-                </div>
+                <div class="col-span-8 text-lg font-medium">Testing</div>
                 <div class="self-center text-right">$25.00</div>
                 <div class="self-center text-right">50</div>
                 <div class="col-span-2 self-center text-right">$1,250.00</div>
@@ -103,61 +128,77 @@
                 <div class="col-span-12 my-4 border-b"></div>
 
                 <!-- Item -->
-                <div class="col-span-8">
-                    <div class="text-lg font-medium">Documentation & Training</div>
-                    <div class="mt-2 text-md text-secondary">
-                        Development of the detailed documentation, preparing guides and instructional videos and extensive training of 2 people.
-                    </div>
-                </div>
+                <div class="col-span-8 text-lg font-medium">Documentation & Training</div>
                 <div class="self-center text-right">$26.50</div>
                 <div class="self-center text-right">260</div>
                 <div class="col-span-2 self-center text-right">$6,890.00</div>
+
+                <!-- Divider -->
+                <div class="col-span-12 my-4 border-b"></div>
+
+                <!-- Item -->
+                <div class="col-span-8 text-lg font-medium">Critical bug fixes for a year</div>
+                <div class="self-center text-right">$25,000</div>
+                <div class="self-center text-right">2</div>
+                <div class="col-span-2 self-center text-right">$50,000.00</div>
+
+                <!-- Divider -->
+                <div class="col-span-12 my-4 border-b"></div>
+
+                <!-- Item -->
+                <div class="col-span-8 text-lg font-medium">Extended security updates for a year</div>
+                <div class="self-center text-right">$15.000</div>
+                <div class="self-center text-right">2</div>
+                <div class="col-span-2 self-center text-right">$30,000.00</div>
+
+                <!-- Divider -->
+                <div class="col-span-12 my-4 border-b"></div>
+
+                <!-- Item -->
+                <div class="col-span-8 text-lg font-medium">Extended updates for a year</div>
+                <div class="self-center text-right">$50.000</div>
+                <div class="self-center text-right">2</div>
+                <div class="col-span-2 self-center text-right">$100,000.00</div>
 
                 <!-- Spacer -->
                 <div class="col-span-12 mt-16"></div>
 
                 <!-- Subtotal -->
                 <div class="col-span-10 self-center font-medium tracking-tight text-secondary">SUBTOTAL</div>
-                <div class="col-span-2 text-right text-lg">$47,315.00</div>
+                <div class="col-span-2 text-right text-lg">$227,315.00</div>
 
                 <!-- Divider -->
                 <div class="col-span-12 my-3 border-b"></div>
 
                 <!-- Tax -->
                 <div class="col-span-10 self-center font-medium tracking-tight text-secondary">TAX</div>
-                <div class="col-span-2 text-right text-lg">$2,365.75</div>
+                <div class="col-span-2 text-right text-lg">$11,365.75</div>
 
                 <!-- Divider -->
                 <div class="col-span-12 my-3 border-b"></div>
 
                 <!-- Discount -->
                 <div class="col-span-10 self-center font-medium tracking-tight text-secondary">DISCOUNT</div>
-                <div class="col-span-2 text-right text-lg">$180.75</div>
+                <div class="col-span-2 text-right text-lg">$3,680.75</div>
 
                 <!-- Divider -->
                 <div class="col-span-12 my-3 border-b"></div>
 
                 <!-- Total -->
                 <div class="col-span-10 self-center text-2xl font-medium tracking-tight text-secondary">TOTAL</div>
-                <div class="col-span-2 text-right text-2xl font-medium">$49,000.00</div>
+                <div class="col-span-2 text-right text-2xl font-medium">$235,000.00</div>
             </div>
 
-            <div class="mt-16">
-                <div class="font-medium">Please pay within 15 days. Thank you for your business.</div>
-                <div class="flex items-start mt-4">
-                    <img
-                        class="flex-0 w-10 mt-2"
-                        src="assets/images/logo/logo.svg">
-                    <div class="ml-6 text-sm text-secondary">
-                        In condimentum malesuada efficitur. Mauris volutpat placerat auctor. Ut ac congue dolor. Quisque scelerisque lacus sed feugiat fermentum.
-                        Cras aliquet facilisis pellentesque. Nunc hendrerit quam at leo commodo, a suscipit tellus dapibus. Etiam at felis volutpat est mollis lacinia.
-                        Mauris placerat sem sit amet velit mollis, in porttitor ex finibus. Proin eu nibh id libero tincidunt lacinia et eget.
-                    </div>
+            <div class="mt-16 bg-[#1F5683] p-3 rounded-md">
+                <div class="text-[12px] text-[#FFFFFF]">
+                    Terms and conditions:
                 </div>
+             
+                    <div class="flex items-start mt-3 text-[10px] text-[#C1C1C1]">
+                        Payment is due 30 days from the invoice date.
+                    </div>
+          
             </div>
-
         </div>
-
     </div>
-
 </div>
