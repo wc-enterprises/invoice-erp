@@ -13,12 +13,8 @@ export interface Contact
         phoneNumber: string;
         label: string;
     }[];
-    title?: string;
-    company?: string;
-    birthday?: string | null;
     address?: string | null;
     notes?: string | null;
-    tags: string[];
 }
 
 export interface Country

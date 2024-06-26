@@ -145,7 +145,7 @@
                                         >
                                             {{ contact.name }}
                                         </div>
-                                        <div
+                                        <div *ngIf="contact.phoneNumbers && contact.phoneNumbers.length"
                                             class="leading-5 truncate text-secondary flex flex-row space-x-2"
                                         >
                                             {{

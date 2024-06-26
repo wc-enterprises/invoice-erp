@@ -7,6 +7,6 @@ export const environment = {
     messagingSenderId: "813418870804",
     appId: "1:813418870804:web:b566df7d2a9d72cdd08f01",
     measurementId: "G-BXVYW61865",
-    // TODO: Figure out if database url needs to be manually added to this section.
+    databaseURL: "https://grace-autoservice-default-rtdb.asia-southeast1.firebasedatabase.app"
   },
 };

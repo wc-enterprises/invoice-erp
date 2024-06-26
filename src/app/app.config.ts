@@ -1,9 +1,5 @@
 import { provideHttpClient } from "@angular/common/http";
-import {
-  APP_INITIALIZER,
-  ApplicationConfig,
-  inject,
-} from "@angular/core";
+import { APP_INITIALIZER, ApplicationConfig, inject } from "@angular/core";
 import { LuxonDateAdapter } from "@angular/material-luxon-adapter";
 import { DateAdapter, MAT_DATE_FORMATS } from "@angular/material/core";
 import { provideAnimations } from "@angular/platform-browser/animations";
@@ -21,8 +17,10 @@ import { provideIcons } from "app/core/icons/icons.provider";
 import { mockApiServices } from "app/services";
 import { TranslocoHttpLoader } from "./core/transloco/transloco.http-loader";
 import { initializeApp, provideFirebaseApp } from "@angular/fire/app";
-import { provideFirestore, getFirestore } from "@angular/fire/firestore";
-import { connectDatabaseEmulator, getDatabase, provideDatabase } from "@angular/fire/database"
+import {
+  getDatabase,
+  provideDatabase,
+} from "@angular/fire/database";
 import { getAuth, provideAuth } from "@angular/fire/auth";
 import { environment } from "./environments/environment";
 
@@ -137,10 +135,9 @@ export const appConfig: ApplicationConfig = {
     }),
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
     provideAuth(() => getAuth()),
-    provideDatabase(()=> {
-        const database = getDatabase();
-        connectDatabaseEmulator(database, 'localhost', 9000);
-        return database;
-    })
+    provideDatabase(() => {
+      const database = getDatabase();
+      return database;
+    }),
   ],
 };
