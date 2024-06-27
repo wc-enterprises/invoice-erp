@@ -44,7 +44,7 @@ export class SettingsPlanBillingComponent implements OnInit
         // Create the form
         this.planBillingForm = this._formBuilder.group({
             plan          : ['team'],
-            cardHolder    : ['Brian Hughes'],
+            cardHolder    : ['Jobin Ebenezer'],
             cardNumber    : [''],
             cardExpiration: [''],
             cardCVC       : [''],

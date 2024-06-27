@@ -26,7 +26,7 @@ export class UnlockSessionModernComponent implements OnInit
         type   : 'success',
         message: '',
     };
-    name: string = 'Brian Hughes';
+    name: string = 'Jobin Ebenezer';
     showAlert: boolean = false;
     unlockSessionForm: UntypedFormGroup;
 
