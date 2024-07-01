@@ -67,7 +67,14 @@ export const defaultNavigation: FuseNavigationItem[] = [
                 title: 'Spares & Services',
                 type: 'basic',
                 icon: 'heroicons_outline:wrench',
-                link: '/apps/ecommerce/inventory',
+                link: '/inventory-and-invoice/spares-and-services',
+            },
+            {
+                id: 'apps.spares-and-services',
+                title: 'Invoices',
+                type: 'basic',
+                icon: 'heroicons_outline:calculator',
+                link: '/inventory-and-invoice/invoices',
             },
             // {
             //     id: 'pages.authentication',

@@ -1,24 +1,25 @@
-export interface InventoryProduct {
+export interface ICar {
     id: string;
-    category?: string;
-    name: string;
-    description?: string;
-    tags?: string[];
-    sku?: string | null;
-    barcode?: string | null;
-    brand?: string | null;
-    vendor: string | null;
-    stock: number;
-    discount: number;
-    cost: number;
-    basePrice: number;
-    taxPercent: number;
-    price: number;
-    weight: number;
-    thumbnail: string;
-    images: string[];
-    active: boolean;
+    regNo: string;
+    make: string; // TODO: Make type of all make in UK
+    model: string; // TODO: Make type of all models in UK 
+
+    customerId: string;
+    nextServiceDate?: string;
+    motValidTill?: string;
+    insuranceValidTill?: string;
+    roadTaxValidTill?: string;
+
+    color?: string;
+    fuelType?: T_FUEL_TYPE;
+    vinNumber?: string; // Chasis number
+    regYear?: string;
+    transmission?: string;
+    mileage?: number;
+    
 }
+
+export type T_FUEL_TYPE = 'Petrol' | 'Diesel' | 'CNG' | 'Bio-Diesel' | 'LPG' | 'Electric';
 
 export interface InventoryPagination {
     length: number;
@@ -27,28 +28,4 @@ export interface InventoryPagination {
     lastPage: number;
     startIndex: number;
     endIndex: number;
-}
-
-export interface InventoryCategory {
-    id: string;
-    parentId: string;
-    name: string;
-    slug: string;
-}
-
-export interface InventoryBrand {
-    id: string;
-    name: string;
-    slug: string;
-}
-
-export interface InventoryTag {
-    id?: string;
-    title?: string;
-}
-
-export interface InventoryVendor {
-    id: string;
-    name: string;
-    slug: string;
 }

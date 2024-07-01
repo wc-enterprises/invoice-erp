@@ -146,7 +146,7 @@ export const appRoutes: Route[] = [
 
       // Apps
       {
-        path: "apps",
+        path: "inventory-and-invoice",
         children: [
           {
             path: "contacts",
@@ -154,9 +154,14 @@ export const appRoutes: Route[] = [
               import("app/modules/admin/apps/contacts/contacts.routes"),
           },
           {
-            path: "ecommerce",
+            path: "spares-and-services",
             loadChildren: () =>
-              import("app/modules/admin/apps/ecommerce/ecommerce.routes"),
+              import("app/modules/admin/apps/spares-and-services/ecommerce.routes"),
+          },
+          {
+            path: "invoices",
+            loadChildren: () =>
+              import("app/modules/admin/apps/invoices/invoices.routes"),
           },
         ],
       },

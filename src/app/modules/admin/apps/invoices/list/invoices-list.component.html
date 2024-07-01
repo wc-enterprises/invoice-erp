@@ -10,7 +10,7 @@
       <mat-progress-bar [mode]="'indeterminate'"></mat-progress-bar>
     </div>
     <!-- Title -->
-    <div class="text-4xl font-extrabold tracking-tight">Cars</div>
+    <div class="text-4xl font-extrabold tracking-tight">Invoices</div>
     <!-- Actions -->
     <div class="flex shrink-0 items-center mt-6 sm:mt-0 sm:ml-4">
       <!-- Search -->
@@ -31,7 +31,7 @@
         />
       </mat-form-field>
       <!-- Add product button -->
-      <button
+      <!-- <button
         class="ml-4"
         mat-flat-button
         [color]="'primary'"
@@ -39,7 +39,8 @@
       >
         <mat-icon [svgIcon]="'heroicons_outline:plus'"></mat-icon>
         <span class="ml-2 mr-1">Add</span>
-      </button>
+      </button> -->
+      <!-- TODO: Actual button above is commented since, it needs to integrate to a different invoice form. -->
 
       <!-- Product Dialog Template -->
       <ng-template #productDialog>
@@ -82,7 +83,7 @@
     <div
       class="flex flex-col flex-auto sm:mb-18 overflow-hidden sm:overflow-y-auto"
     >
-      <ng-container *ngIf="cars$ | async as products">
+      <ng-container *ngIf="invoices$ | async as products">
         <ng-container *ngIf="products.length > 0; else noProducts">
           <div class="grid">
             <!-- Header -->
@@ -149,7 +150,7 @@
                       <mat-icon
                         class="icon-size-5"
                         [svgIcon]="
-                          selectedCar?.id === product.id
+                          selectedInvoice?.id === product.id
                             ? 'heroicons_solid:chevron-up'
                             : 'heroicons_solid:chevron-down'
                         "
@@ -158,7 +159,7 @@
                   </div>
                 </div>
                 <div class="grid">
-                  <ng-container *ngIf="selectedCar?.id === product.id">
+                  <ng-container *ngIf="selectedInvoice?.id === product.id">
                     <ng-container
                       *ngTemplateOutlet="
                         rowDetailsTemplate;

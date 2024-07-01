@@ -38,14 +38,14 @@ import { MatSort, MatSortModule } from "@angular/material/sort";
 import { fuseAnimations } from "@fuse/animations";
 import { FuseConfirmationService } from "@fuse/services/confirmation";
 import { Observable, Subject, takeUntil } from "rxjs";
-import { ICar } from "../cars.types";
-import { CarsService } from "../cars.service";
 import { ContactsService } from "../../contacts/contacts.service";
 import { Contact } from "../../contacts/contacts.types";
+import { IInvoice } from "../invoices.types";
+import { InvoicesService } from "../invoices.service";
 
 @Component({
   selector: "inventory-list",
-  templateUrl: "./cars.component.html",
+  templateUrl: "./invoices-list.component.html",
   styles: [
     /* language=SCSS */
     `
@@ -93,16 +93,16 @@ import { Contact } from "../../contacts/contacts.types";
     CurrencyPipe,
   ],
 })
-export class CarsListComponent implements OnInit, AfterViewInit, OnDestroy {
+export class InvoicesListComponent implements OnInit, AfterViewInit, OnDestroy {
   //   @ViewChild(MatPaginator) private _paginator: MatPaginator;
   @ViewChild(MatSort) private _sort: MatSort;
 
-  cars$: Observable<ICar[]>;
+  invoices$: Observable<IInvoice[]>;
   filteredCustomers: Contact[];
   flashMessage: "success" | "error" | null = null;
   isLoading: boolean = false;
   searchInputControl: UntypedFormControl = new UntypedFormControl();
-  selectedCar: ICar | null = null;
+  selectedInvoice: IInvoice | null = null;
   selectedProductForm: UntypedFormGroup;
   tagsEditMode: boolean = false;
   searchQuery: string;
@@ -115,7 +115,7 @@ export class CarsListComponent implements OnInit, AfterViewInit, OnDestroy {
     private _changeDetectorRef: ChangeDetectorRef,
     private _fuseConfirmationService: FuseConfirmationService,
     private _formBuilder: UntypedFormBuilder,
-    private _carsService: CarsService,
+    private _invoicesService: InvoicesService,
     private _contactsService: ContactsService
   ) {}
 
@@ -151,7 +151,7 @@ export class CarsListComponent implements OnInit, AfterViewInit, OnDestroy {
     });
 
     // // Get the brands
-    // this._carsService.brands$
+    // this._invoicesService.brands$
     //     .pipe(takeUntil(this._unsubscribeAll))
     //     .subscribe((brands: InventoryBrand[]) => {
     //         // Update the brands
@@ -162,7 +162,7 @@ export class CarsListComponent implements OnInit, AfterViewInit, OnDestroy {
     //     });
 
     // // Get the categories
-    // this._carsService.categories$
+    // this._invoicesService.categories$
     //     .pipe(takeUntil(this._unsubscribeAll))
     //     .subscribe((categories: InventoryCategory[]) => {
     //         // Update the categories
@@ -173,7 +173,7 @@ export class CarsListComponent implements OnInit, AfterViewInit, OnDestroy {
     //     });
 
     // Get the pagination
-    // this._carsService.pagination$
+    // this._invoicesService.pagination$
     //   .pipe(takeUntil(this._unsubscribeAll))
     //   .subscribe((pagination: InventoryPagination) => {
     //     // Update the pagination
@@ -184,25 +184,25 @@ export class CarsListComponent implements OnInit, AfterViewInit, OnDestroy {
     //   });
 
     // Get the products
-    this.cars$ = this._carsService.cars$;
-    this.cars$.subscribe((cars) => {
+    this.invoices$ = this._invoicesService.invoices$;
+    this.invoices$.subscribe((cars) => {
       console.log("cars", cars);
     });
 
     // Subscribe to search input field value changes
-    this.searchInputControl.valueChanges
-      .pipe(takeUntil(this._unsubscribeAll))
-      .subscribe((query) => {
-        this.isLoading = true;
-        this._carsService
-          .searchCars(query)
-          .then((data) => {
-            this.isLoading = false;
-          })
-          .catch((err) => {
-            this.isLoading = false;
-          });
-      });
+    // this.searchInputControl.valueChanges
+    //   .pipe(takeUntil(this._unsubscribeAll))
+    //   .subscribe((query) => {
+    //     this.isLoading = true;
+    //     this._invoicesService
+    //       .searchCars(query)
+    //       .then((data) => {
+    //         this.isLoading = false;
+    //       })
+    //       .catch((err) => {
+    //         this.isLoading = false;
+    //       });
+    //   });
   }
 
   /**
@@ -233,7 +233,7 @@ export class CarsListComponent implements OnInit, AfterViewInit, OnDestroy {
     //       switchMap(() => {
     //         this.closeDetails();
     //         this.isLoading = true;
-    //         return this._carsService.getCars(
+    //         return this._invoicesService.getCars(
     //           this._paginator.pageIndex,
     //           this._paginator.pageSize,
     //           this._sort.active,
@@ -270,20 +270,20 @@ export class CarsListComponent implements OnInit, AfterViewInit, OnDestroy {
     console.log(
       "Received request to toggle details for id: ",
       carId,
-      this.selectedCar
+      this.selectedInvoice
     );
 
     // If the product is already selected...
-    if (this.selectedCar && this.selectedCar.id === carId) {
+    if (this.selectedInvoice && this.selectedInvoice.id === carId) {
       // Close the details
       this.closeDetails();
       return;
     }
 
     // Get the product by id
-    this._carsService.getCarById(carId).subscribe((product) => {
+    this._invoicesService.getInvoiceById(carId).subscribe((product) => {
       // Set the selected product
-      this.selectedCar = product;
+      this.selectedInvoice = product;
 
       // Fill the form
       this.selectedProductForm.patchValue(product);
@@ -294,7 +294,7 @@ export class CarsListComponent implements OnInit, AfterViewInit, OnDestroy {
 
     console.log(
       "Selected product after fetching it from the service: ",
-      this.selectedCar,
+      this.selectedInvoice,
       this.selectedProductForm.value
     );
   }
@@ -303,7 +303,7 @@ export class CarsListComponent implements OnInit, AfterViewInit, OnDestroy {
    * Close the details
    */
   closeDetails(): void {
-    this.selectedCar = null;
+    this.selectedInvoice = null;
   }
 
   /**
@@ -329,22 +329,7 @@ export class CarsListComponent implements OnInit, AfterViewInit, OnDestroy {
     }
   }
 
-  /**
-   * Create product
-   */
-  createProduct(): void {
-    // Create the product
-    this._carsService.createNoopCar().subscribe((newCar) => {
-      // Go to new product
-      this.selectedCar = newCar;
-
-      // Fill the form
-      this.selectedProductForm.patchValue(newCar);
-
-      // Mark for check
-      this._changeDetectorRef.markForCheck();
-    });
-  }
+  
 
   /**
    * Update the selected product using the form data
@@ -357,7 +342,7 @@ export class CarsListComponent implements OnInit, AfterViewInit, OnDestroy {
     delete product.currentImageIndex;
 
     // Update the product on the server
-    this._carsService.updateCar(product.id, product).then(() => {
+    this._invoicesService.updateInvoice(product.id, product).then(() => {
       // Show a success message
       this.showFlashMessage("success");
     });
@@ -387,7 +372,7 @@ export class CarsListComponent implements OnInit, AfterViewInit, OnDestroy {
         const product = this.selectedProductForm.getRawValue();
 
         // Delete the product on the server
-        this._carsService.deleteProduct(product.id).then(() => {
+        this._invoicesService.deleteInvoice(product.id).then(() => {
           // Close the details
           this.closeDetails();
         });

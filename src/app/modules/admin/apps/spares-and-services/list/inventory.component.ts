@@ -40,7 +40,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatSort, MatSortModule } from '@angular/material/sort';
 import { fuseAnimations } from '@fuse/animations';
 import { FuseConfirmationService } from '@fuse/services/confirmation';
-import { InventoryService } from 'app/modules/admin/apps/ecommerce/inventory/inventory.service';
+import { InventoryService } from 'app/modules/admin/apps/spares-and-services/inventory.service';
 import {
     InventoryBrand,
     InventoryCategory,
@@ -48,7 +48,7 @@ import {
     InventoryProduct,
     InventoryTag,
     InventoryVendor,
-} from 'app/modules/admin/apps/ecommerce/inventory/inventory.types';
+} from 'app/modules/admin/apps/spares-and-services/inventory.types';
 import {
     debounceTime,
     map,
@@ -321,6 +321,7 @@ export class InventoryListComponent
      * @param productId
      */
     toggleDetails(productId: string): void {
+        console.log("Received request to toggle details", { productId, selectedProduct: this.selectedProduct})
         // If the product is already selected...
         if (this.selectedProduct && this.selectedProduct.id === productId) {
             // Close the details
@@ -341,6 +342,7 @@ export class InventoryListComponent
                 // Mark for check
                 this._changeDetectorRef.markForCheck();
             });
+        console.log("Selected product after fetching it from the service: ", this.selectedProduct)
     }
 
     /**

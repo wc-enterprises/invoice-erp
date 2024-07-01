@@ -114,14 +114,14 @@ export class ContactsService {
    * Get contacts
    */
   getContacts() {
-    const starCountRef = ref(this.db, "contacts");
-    const unsubsriber = onValue(starCountRef, (snapshot) => {
+    const contactsRef = ref(this.db, "contacts");
+    const unsubsriber = onValue(contactsRef, (snapshot) => {
       const data = snapshot.val();
       console.log("Snaphost data of updated contact", data);
 
-      const sortedContacts = this.frameContactsForComponent(data);
+      const framedContacts = this.frameContactsForComponent(data);
 
-      this._contacts.next(sortedContacts);
+      this._contacts.next(framedContacts);
     });
 
     this._unsubscribers.push(unsubsriber);
@@ -162,30 +162,33 @@ export class ContactsService {
    *
    * @param query
    */
-  searchContacts(query: string) {
+  searchContacts(query: string): Promise<Contact[]> {
     console.log("Search contacts function called with query: ", query);
 
     const dbRef = ref(this.db);
-    get(child(dbRef, `contacts`))
+    return get(child(dbRef, `contacts`))
       .then((snapshot) => {
         if (snapshot.exists()) {
-          let sortedContacts = this.frameContactsForComponent(snapshot.val());
+          let framedContacts = this.frameContactsForComponent(snapshot.val());
 
-          if(!query) this._contacts.next(sortedContacts)
+          if(!query) this._contacts.next(framedContacts)
 
-          sortedContacts = sortedContacts.filter(
+            framedContacts = framedContacts.filter(
             (contact) =>
               contact.name &&
               contact.name.toLowerCase().includes(query.toLowerCase())
           );
-          this._contacts.next(sortedContacts);
+          this._contacts.next(framedContacts);
+          return framedContacts;
 
         } else {
           console.log("No data available");
+          return []
         }
       })
       .catch((error) => {
         console.error(error);
+        return []
       })
   }
 
